@@ -9,6 +9,14 @@ html, body{
 img, p, a{
   transition: 1s;
 }
+img.top {
+  margin: 12px;
+  border-style: solid;
+  border-radius: 11px;
+  border-width: 0.3vw;
+  width: 15vw;
+  height: 8vw;
+}
 
 :root {
   --body-bg: #1f2225;
@@ -98,7 +106,7 @@ img.lara {
 @media only screen and (max-width: 730px) {
 
   img.top {
-    width: 40vw;
+    width: 15vw;
   }
 
   iframe.dis {
@@ -175,7 +183,7 @@ img.lara {
 @media only screen and (min-width: 730px) {
 
   img.top {
-  width: 20vw;
+  width: 15vw;
   }
   
   iframe.dis {
@@ -235,7 +243,7 @@ img.lara {
   }
 
   div.ex {
-    padding-top: 15%;
+    padding-top: 10%;
   }
 
   img.ex {
@@ -249,6 +257,10 @@ img.lara {
     filter: saturate(0%);
   }
 
+}
+
+.icone:not(:hover) {
+  transition: 1s ease-out;
 }
 
 #pp {
@@ -296,11 +308,11 @@ p.ex {
 }
 
 img.icone:hover {
-  -webkit-animation: saturate 1s;
-  -webkit-animation-fill-mode: forwards;
+  animation: saturate 1s;
+  animation-fill-mode: forwards;
 }
 
-@-webkit-keyframes saturate {
+@keyframes saturate {
   0%  { -webkit-filter: saturate(0%); }
   100% { -webkit-filter: saturate(100%); }
 }
@@ -310,11 +322,11 @@ img.icone:hover {
 }
 
 #git:hover {
-  -webkit-animation: invert 1s;
-  -webkit-animation-fill-mode: forwards;
+  animation: invert 1s;
+  animation-fill-mode: forwards;
 }
 
-@-webkit-keyframes invert {
+@keyframes invert {
   100% { -webkit-filter: invert(0%); }
 }
 
@@ -385,5 +397,6 @@ h2.fm {
 }
 
 h1.pp, h2.fm, h2.lr, h2.ex {
+  background-clip: text;
   -webkit-background-clip: text;
 }
