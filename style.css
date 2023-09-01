@@ -8,6 +8,7 @@ html, body{
 
 img, p, a{
   transition: 1s;
+  max-width: 100%
 }
 img.top {
   margin: 12px;
@@ -103,7 +104,12 @@ img.lara {
   display: block;
 }
 
-@media only screen and (max-width: 730px) {
+img.icone {
+  filter: saturate(0%);
+  transition: 1s;
+}
+
+@media only screen and (max-width: 768px) {
 
   img.top {
     width: 15vw;
@@ -170,7 +176,6 @@ img.lara {
   img.icone {
     width: 10vw;
     height: 10vw;
-    filter: saturate(0%);
   }
 
   img.sla {
@@ -179,8 +184,7 @@ img.lara {
   }
 
 }
-
-@media only screen and (min-width: 730px) {
+@media only screen and (min-width: 768px) {
 
   img.top {
   width: 15vw;
@@ -254,14 +258,10 @@ img.lara {
   img.icone {
     width: 6vw;
     height: 6vw;
-    filter: saturate(0%);
   }
 
 }
 
-.icone:not(:hover) {
-  transition: 1s ease-out;
-}
 
 #pp {
   align-items: center;
@@ -307,14 +307,14 @@ p.ex {
 	top:1px;
 }
 
-img.icone:hover {
-  animation: saturate 1s;
-  animation-fill-mode: forwards;
+img.icone {
+  filter: saturate(0%);
+  transition: filter 1s; /* Adicione esta linha para a transição suave */
 }
 
-@keyframes saturate {
-  0%  { -webkit-filter: saturate(0%); }
-  100% { -webkit-filter: saturate(100%); }
+img.icone:hover {
+  animation-fill-mode: forwards;
+  filter: saturate(100%);
 }
 
 #git {
@@ -322,12 +322,8 @@ img.icone:hover {
 }
 
 #git:hover {
-  animation: invert 1s;
+  filter: invert(0%);
   animation-fill-mode: forwards;
-}
-
-@keyframes invert {
-  100% { -webkit-filter: invert(0%); }
 }
 
 img.sla {
