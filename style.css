@@ -151,7 +151,7 @@ img.icone {
 
   h1.pp {
     padding-top: 30%;
-    display: inline;
+    display: block;
   }
 
   img.user {
@@ -231,7 +231,7 @@ img.icone {
   }
 
   h1.pp {
-    display: inline;
+    display: block;
     padding-top: 15%;
     font-size: 250%
   }
@@ -358,7 +358,7 @@ img.ex {
 h1.pp {
   background: -webkit-linear-gradient(43deg, #4158D0 0%, #C850C0 45%, #FFCC70 75%, #C850C0 90%, #4158D0 100%);
   -webkit-text-fill-color: transparent;
-  font-size: 500%;
+  font-size: 5vw;
   animation: slidebg 10s linear infinite;
 }
 
