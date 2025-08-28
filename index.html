@@ -1,65 +1,524 @@
 <!DOCTYPE html>
+<!-- Define o idioma do documento para português do Brasil -->
 <html lang="pt-br">
 <head>
-  <title>Lara BOT</title>
-  <meta property="og:title" content="Lara BOT" />
-  <meta property="og:description"content="Site Oficial da Lara BOT"  />
-  <meta property="og:url" content="https://larab0t.equipelarabot.repl.co/" />
-  <meta property="og:image" content="https://cdn.discordapp.com/attachments/783984692277673994/783984877804060722/7821ccf3ccb2db880bce446d537cceb9_1.png" />
-  <meta content="#8300FF" data-react-helmet="true" name="theme-color" />
-  <meta charset="UTF-8">
-  <link rel="shortcut icon" href="imagens/Lara.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="sMjLepKrCY8oq5p6v0jq_zZvZaszahW_wx9oy7l1Ve0" />
-    <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YPRF2VXF1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-6YPRF2VXF1');
-  </script>
+    <!-- Metadados essenciais -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título otimizado para SEO -->
+    <title>Lara BOT - Seu Assistente para Servidores do Discord</title>
+    
+    <!-- Meta tags para SEO e compartilhamento em redes sociais (Open Graph) -->
+    <meta name="description" content="Lara BOT ajuda a gerenciar tarefas, organizar projetos e muito mais no seu servidor do Discord. Adicione agora e melhore sua comunidade!">
+    <meta name="keywords" content="Discord Bot, Lara BOT, Gerenciador de Tarefas, Bot para Discord, Moderação">
+    <meta property="og:title" content="Lara BOT - Seu Assistente para Discord" />
+    <meta property="og:description" content="Site Oficial da Lara BOT. Adicione ao seu servidor e simplifique sua gestão." />
+    <meta property="og:url" content="https://larab0t.pages.dev/" />
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/783984692277673994/783984877804060722/7821ccf3ccb2db880bce446d537cceb9_1.png" />
+    <meta name="theme-color" content="#8300FF" />
+
+    <!-- Ícone do site (Favicon) -->
+    <link rel="shortcut icon" href="imagens/Lara.ico" type="image/x-icon">
+
+    <!-- Verificação do Google (se ainda for necessária) -->
+    <meta name="google-site-verification" content="sMjLepKrCY8oq5p6v0jq_zZvZaszahW_wx9oy7l1Ve0" />
+
+    <!-- Google Fonts para uma tipografia mais moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Link para o arquivo de CSS externo -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="divnav">
-    <a href="index.html"><img class="icon" src="imagens/Lara.ico"></a><hr class="ic">
-    <div id="links">
-        <p class="kk">
-          <div class="divslink"><a href="paginas/equipe.html">Equipe</a>
-            <hr class="bord">
-          </div>
-          <div class="divslink"><a href="#">CMDS</a>
-            <hr class="bord">
-          </div>
-          <div class="divslink"><a href="paginas/sobre.html">Sobre</a>
-            <hr class="bord">
-          </div>
-        </p>
+
+    <!-- CABEÇALHO SEMÂNTICO -->
+    <header>
+        <a href="#inicio" class="logo page-link">
+            <img src="imagens/Lara.ico" alt="Logo da Lara BOT">
+            <span>Lara BOT</span>
+        </a>
+        <nav class="nav-links">
+            <a href="#inicio" class="page-link active-link">Início</a>
+            <a href="#comandos" class="page-link">Comandos</a>
+            <a href="#sobre" class="page-link">Sobre</a>
+            <a href="#termos" class="page-link">Termos de Serviço</a>
+            <a href="#politica" class="page-link">Política de Privacidade</a>
+        </nav>
+        <!-- Seletor de Tema -->
+        <div class="theme-switcher">
+            <input type="checkbox" id="theme-toggle">
+            <label for="theme-toggle" class="slider"></label>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container">
+
+        <!-- SEÇÃO INÍCIO (PÁGINA PRINCIPAL) -->
+        <section id="inicio" class="page-section active">
+            <div class="hero">
+                <img class="avatar" src="imagens/LaraB0T.png" alt="Mascote da Lara BOT">
+                <h1>Lara BOT</h1>
+                <p>Sempre o melhor para os usuários!</p>
+                <div class="hero-buttons">
+                    <a href="https://discord.com/oauth2/authorize?client_id=739265612051906721&scope=bot&permissions=1879567614" class="button" target="_blank" rel="noopener noreferrer">Convidar</a>
+                    <a href="https://discord.com/invite/KzqSuaW" class="button" target="_blank" rel="noopener noreferrer">Suporte</a>
+                </div>
+            </div>
+            <div class="widgets">
+                <a href="https://top.gg/bot/739265612051906721" target="_blank" rel="noopener noreferrer">
+                    <img src="https://top.gg/api/widget/739265612051906721.svg" alt="Widget de status da Lara BOT no top.gg">
+                </a>
+            </div>
+        </section>
+
+        <!-- SEÇÃO COMANDOS -->
+        <section id="comandos" class="page-section">
+            <div class="content-page">
+                <h1>Lista de Comandos</h1>
+                <p>Clique em um comando para ver mais detalhes, como descrição e exemplos de uso.</p>
+                <div class="commands-grid">
+                  <div class="command-card"
+                      data-name="addtime"
+                      data-description="Adiciona tempo de voz."
+                      data-example="addtime <@mention> [2]"
+                      data-status="disponivel">
+                      <h3>addtime</h3>
+                      <p>Adiciona tempo de voz.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="addxp"
+                      data-description="Adicione xp para alguém."
+                      data-example="addxp <@mention> [140]"
+                      data-status="disponivel">
+                      <h3>addxp</h3>
+                      <p>Adiciona XP para alguém.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="anime"
+                      data-description="Imagens de animes/mangás."
+                      data-example="anime"
+                      data-status="disponivel">
+                      <h3>anime</h3>
+                      <p>Imagens de animes/mangás.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="ban"
+                      data-description="Banir um usuário."
+                      data-example="ban <@mention> [motivos]"
+                      data-status="disponivel">
+                      <h3>ban</h3>
+                      <p>Banir um usuário.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="bot"
+                      data-description="Mostra informações do bot."
+                      data-example="bot"
+                      data-status="melhoria">
+                      <h3>bot</h3>
+                      <p>Mostra informações do bot.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="cargo"
+                      data-description="Atribui cargo para um usuário."
+                      data-example="cargo <@mention> <@role>"
+                      data-status="disponivel">
+                      <h3>cargo</h3>
+                      <p>Atribui cargo para um usuário.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="configlang"
+                      data-description="Configurar o idioma do bot para este servidor."
+                      data-example="configlang"
+                      data-status="melhoria">
+                      <h3>configlang</h3>
+                      <p>Configurar o idioma do bot para este servidor.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="dev"
+                      data-description="Você é o DEV?"
+                      data-example="dev"
+                      data-status="disponivel">
+                      <h3>dev</h3>
+                      <p>Você é o DEV?</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="feed"
+                      data-description="Feed de opinião para avaliar o nosso desempenho."
+                      data-example="feed [Deixei o seu feedback]"
+                      data-status="disponivel">
+                      <h3>feed</h3>
+                      <p>Feed de opinião para avaliar o desempenho.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="hug"
+                      data-description="Abraçar outro usuário."
+                      data-example="hug <@mention>"
+                      data-status="manutencao">
+                      <h3>hug</h3>
+                      <p>Abraçar outro usuário.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="kick"
+                      data-description="Expulsar um usuário."
+                      data-example="kick <@mention> [motivos]"
+                      data-status="disponivel">
+                      <h3>kick</h3>
+                      <p>Expulsar um usuário.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="kiss"
+                      data-description="Beijar outro usuário."
+                      data-example="kiss"
+                      data-status="disponivel">
+                      <h3>kiss</h3>
+                      <p>Beijar outro usuário.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="leaderboard"
+                      data-description="Exibe o top 10 de usuários por tempo de voz em um ranking gráfico."
+                      data-example="leaderboard"
+                      data-status="melhoria">
+                      <h3>leaderboard</h3>
+                      <p>Exibe o ranking de tempo de voz.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="limpar"
+                      data-description="Limpe o chat."
+                      data-example="limpar [quantidade]"
+                      data-status="disponivel">
+                      <h3>limpar</h3>
+                      <p>Limpa o chat.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="moeda"
+                      data-description="Cara ou coroa."
+                      data-example="moeda"
+                      data-status="disponivel">
+                      <h3>moeda</h3>
+                      <p>Jogar cara ou coroa.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="ping"
+                      data-description="Latência do bot."
+                      data-example="ping"
+                      data-status="disponivel">
+                      <h3>ping</h3>
+                      <p>Mostra a latência do bot.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="rank"
+                      data-description="Mostra o nível e XP de um membro."
+                      data-example="rank"
+                      data-status="disponivel">
+                      <h3>rank</h3>
+                      <p>Mostra o nível e XP de um membro.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="removetime"
+                      data-description="Remove tempo de voz."
+                      data-example="removetime <@mention> [3]"
+                      data-status="disponivel">
+                      <h3>removetime</h3>
+                      <p>Remove tempo de voz.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="removexp"
+                      data-description="Remove xp de alguém."
+                      data-example="removexp <@mention> [230]"
+                      data-status="disponivel">
+                      <h3>removexp</h3>
+                      <p>Remove XP de alguém.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="report"
+                      data-description="Reportar bug e/ou erro."
+                      data-example="report [seu report para a equipe]"
+                      data-status="manutencao">
+                      <h3>report</h3>
+                      <p>Reportar bug ou erro.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="resetvoicetime"
+                      data-description="Reseta o tempo de voz de um membro ou de todo o servidor. (Administrador)"
+                      data-example="resetvoicetime <@mention>"
+                      data-status="disponivel">
+                      <h3>resetvoicetime</h3>
+                      <p>Reseta o tempo de voz de um usuário ou servidor.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="resetxp"
+                      data-description="Resetar xp global ou de um usuário."
+                      data-example="resetxp <@mention>"
+                      data-status="disponivel">
+                      <h3>resetxp</h3>
+                      <p>Resetar XP global ou de usuário.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="roles"
+                      data-description="Mostra os cargos do servidor."
+                      data-example="roles <@mention>"
+                      data-status="manutencao">
+                      <h3>roles</h3>
+                      <p>Mostra os cargos do servidor.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="server"
+                      data-description="Info do server."
+                      data-example="server"
+                      data-status="disponivel">
+                      <h3>server</h3>
+                      <p>Mostra informações do servidor.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="slap"
+                      data-description="Dar um tapa em outro usuário."
+                      data-example="slap <@mention>"
+                      data-status="disponivel">
+                      <h3>slap</h3>
+                      <p>Dar um tapa em outro usuário.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="sug"
+                      data-description="Um feed de sugestão para melhorar nosso serviço."
+                      data-example="sug [sua sugestão para melhoria do bot]"
+                      data-status="disponivel">
+                      <h3>sug</h3>
+                      <p>Enviar sugestão para melhorar o serviço.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="timer"
+                      data-description="Inicia um temporizador."
+                      data-example="timer 120s [mensagem]"
+                      data-status="melhoria">
+                      <h3>timer</h3>
+                      <p>Inicia um temporizador.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="top"
+                      data-description="Exibe o top 5 de membros com mais XP."
+                      data-example="top"
+                      data-status="disponivel">
+                      <h3>top</h3>
+                      <p>Exibe o top 5 de membros com mais XP.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="user"
+                      data-description="Info do user."
+                      data-example="user"
+                      data-status="disponivel">
+                      <h3>user</h3>
+                      <p>Mostra informações do usuário.</p>
+                  </div>
+
+                  <div class="command-card"
+                      data-name="voicetime"
+                      data-description="Mostra o tempo total de voz de um usuário."
+                      data-example="voicetime"
+                      data-status="melhoria">
+                      <h3>voicetime</h3>
+                      <p>Mostra o tempo total de voz de um usuário.</p>
+                  </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SEÇÃO SOBRE -->
+        <section id="sobre" class="page-section">
+            <div class="content-page">
+                <h1>Sobre o Projeto</h1>
+                <p>Conheça o criador e os projetos parceiros que ajudam a comunidade.</p>
+                
+                <h2>O Criador</h2>
+                <div class="creator-container">
+                    <div class="card" 
+                         data-image="imagens/HeitorDJAk47.png"
+                         data-title="HeitorDJAk47"
+                         data-description="Programador, Projetista e Fundador do Projeto Lara. Responsável pelo desenvolvimento e manutenção da BOT."
+                         data-links='[
+                            {"url": "https://www.youtube.com/channel/UCpgliPEzj2Zomhy0mWLZxxg", "icon": "imagens/youtube.png", "alt": "YouTube"},
+                            {"url": "https://github.com/HeitorDJAk47Gamer", "icon": "imagens/git.png", "alt": "GitHub"}
+                         ]'>
+                        <img src="imagens/HeitorDJAk47.png" alt="Foto de HeitorDJAk47">
+                        <h3>HeitorDJAk47</h3>
+                        <p>Desenvolvedor Principal</p>
+                    </div>
+                </div>
+
+                <h2>Projetos Afiliados</h2>
+                <div class="projects-grid">
+                    <div class="card"
+                         data-image="imagens/Exception.png"
+                         data-title="Exception Project"
+                         data-description="O Exception foi criado em 7 de maio de 2020 por HeitorDJAk47 & 100tavos, com o principal propósito de reunir amigos para jogar. Com o tempo, tornou-se uma comunidade focada na criação e desenvolvimento de projetos diversos."
+                         data-links='[
+                            {"url": "https://discord.gg/wZEP7GY", "icon": "imagens/discord.png", "alt": "Discord"}
+                         ]'>
+                        <img src="imagens/Exception.png" alt="Logo do Projeto Exception">
+                        <h3>Exception Project</h3>
+                        <p>Comunidade de projetos e amigos.</p>
+                    </div>
+                    <div class="card"
+                         data-image="imagens/Flitser.png"
+                         data-title="Flitser Music"
+                         data-description="Atualmente, Flitser é um bot de música de código aberto, mantido pela #Equipe Lara BOT, para onde os comandos de música foram transferidos por questões de segurança e desempenho."
+                         data-links='[]'>
+                        <img src="imagens/Flitser.png" alt="Logo do Projeto Flitser">
+                        <h3>Flitser Bot</h3>
+                        <p>Bot para Discord com foco em música.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO TERMOS DE SERVIÇO -->
+        <section id="termos" class="page-section">
+            <div class="content-page">
+                <h1>Termos de Serviço</h1>
+                <p>Ao utilizar a Lara BOT, você concorda em cumprir os seguintes Termos de Serviço:</p>
+                
+                <h2>1. Aceitação dos Termos</h2>
+                <p>Ao utilizar a Lara BOT, você concorda com os Termos aqui descritos. Se não concordar, deve interromper o uso imediatamente.</p>
+
+                <h2>2. Alterações nos Termos</h2>
+                <p>Reservamo-nos o direito de modificar ou substituir estes Termos a qualquer momento. Qualquer alteração será notificada por meio do Discord ou de outra forma razoável. O uso contínuo do Bot após tais alterações constitui sua aceitação dos novos Termos.</p>
+                
+                <h2>3. Uso do Bot</h2>
+                <ul>
+                    <li>O Bot é fornecido "como está" e "conforme disponível". Não garantimos que ele estará sempre disponível ou que funcionará sem interrupções.</li>
+                    <li>O uso do Bot deve estar de acordo com as regras do Discord e outras leis e regulamentos aplicáveis.</li>
+                    <li>Você concorda em não usar o Bot de maneira que cause danos, interrupções ou sobrecargas ao Bot ou aos servidores onde ele está hospedado.</li>
+                </ul>
+                
+                <h2>4. Privacidade e Dados</h2>
+                <p>O Bot pode coletar e processar informações limitadas, como mensagens enviadas em canais públicos para execução de comandos e interações. Nenhuma informação pessoal identificável é coletada ou armazenada sem o seu consentimento explícito.</p>
+                
+                <h2>5. Limitação de Responsabilidade</h2>
+                <p>Na medida permitida pela lei, a Lara BOT e seus desenvolvedores não se responsabilizam por quaisquer danos diretos, indiretos, incidentais ou consequenciais resultantes do uso ou da incapacidade de usar o Bot, incluindo, mas não se limitando a, danos causados por falhas técnicas, bugs ou violações de segurança.</p>
+                
+                <h2>6. Rescisão</h2>
+                <p>Podemos suspender ou encerrar seu acesso ao Bot a qualquer momento, com ou sem aviso prévio, por qualquer motivo, incluindo violação destes Termos ou mau uso do Bot.</p>
+                
+                <h2>7. Contato</h2>
+                <p>Se você tiver dúvidas sobre estes Termos ou o funcionamento do Bot, entre em contato conosco através de l4r4b0t@gmail.com.</p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO POLÍTICA DE PRIVACIDADE -->
+        <section id="politica" class="page-section">
+            <div class="content-page">
+                <h1>Política de Privacidade</h1>
+                <p>Esta Política de Privacidade explica como seus dados são coletados e usados ao interagir com a Lara BOT.</p>
+                
+                <h2>1. Informações Coletadas</h2>
+                <p>A Lara BOT coleta informações limitadas para fornecer suas funcionalidades e serviços. As informações coletadas incluem:</p>
+                <ul>
+                    <li><strong>Comandos:</strong> Mensagens que os usuários enviam diretamente ao Bot para interagir com suas funcionalidades.</li>
+                    <li><strong>Dados públicos:</strong> O Bot pode processar mensagens enviadas em canais públicos de servidores do Discord, mas <strong>não armazena</strong> essas mensagens de forma permanente.</li>
+                </ul>
+                <p><strong>Dados que não são coletados:</strong></p>
+                <ul>
+                    <li>O Bot <strong>não</strong> coleta ou armazena informações pessoais identificáveis (como nomes reais, endereços de e-mail, etc.).</li>
+                    <li>O Bot <strong>não</strong> acessa ou coleta mensagens enviadas em mensagens privadas (DMs) no Discord.</li>
+                </ul>
+
+                <h2>2. Uso das Informações</h2>
+                <p>As informações coletadas pela Lara BOT são usadas exclusivamente para fornecer suas funcionalidades e melhorar a experiência dos usuários. Isso inclui:</p>
+                <ul>
+                    <li>Executar comandos enviados pelos usuários.</li>
+                    <li>Monitorar o uso do Bot para detectar e corrigir erros ou falhas.</li>
+                </ul>
+                
+                <h2>3. Armazenamento de Dados</h2>
+                <p>A Lara BOT <strong>não armazena</strong> de forma persistente nenhum dado pessoal ou mensagens dos usuários. Qualquer dado coletado é processado em tempo real para execução de comandos e, em seguida, descartado.</p>
+                
+                <h2>4. Compartilhamento de Dados</h2>
+                <p>As informações coletadas pela Lara BOT <strong>não são compartilhadas</strong> com terceiros. Os dados são usados exclusivamente dentro do escopo do funcionamento do Bot e não serão vendidos, transferidos ou divulgados para qualquer entidade externa.</p>
+
+                <h2>5. Segurança</h2>
+                <p>A Lara BOT implementa medidas de segurança adequadas para proteger qualquer informação que seja temporariamente processada. Embora nenhum sistema seja 100% seguro, tomamos precauções razoáveis para evitar acessos não autorizados ou vazamento de dados.</p>
+                
+                <h2>6. Direitos dos Usuários</h2>
+                <p>Como o Bot coleta informações limitadas, os direitos dos usuários em relação à exclusão de dados são simples:</p>
+                <ul>
+                    <li>Se você deseja <strong>excluir dados</strong> que possam estar associados ao seu uso do Bot, você pode nos contatar através de l4r4b0t@gmail.com, e avaliaremos sua solicitação.</li>
+                </ul>
+                
+                <h2>7. Alterações na Política de Privacidade</h2>
+                <p>Podemos atualizar esta Política de Privacidade de tempos em tempos. Qualquer mudança será informada através de avisos no Discord ou outro meio adequado.</p>
+
+                <h2>8. Contato</h2>
+                <p>Se você tiver qualquer dúvida sobre esta Política de Privacidade, entre em contato através de l4r4b0t@gmail.com.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ SEMÂNTICO -->
+    <footer>
+        <div class="social-icons">
+            <a href="#" target="_blank" rel="noopener noreferrer"><img src="imagens/discord.png" alt="Discord"></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"><img src="imagens/insta.png" alt="Instagram"></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"><img src="imagens/youtube.png" alt="YouTube"></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"><img src="imagens/git.png" alt="GitHub"></a>
+        </div>
+        <p>&copy; 2025 Lara BOT. Todos os direitos reservados.</p>
+        <p>Entre em contato: <a href="mailto:l4r4b0t@gmail.com">l4r4b0t@gmail.com</a></p>
+    </footer>
+
+    <!-- MODAL (POP-UP) -->
+    <div id="modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close-btn" class="modal-close">&times;</button>
+            <img id="modal-image" src="" alt="Imagem do Modal">
+            <h2 id="modal-title"></h2>
+            <div id="modal-status"></div>
+            <p id="modal-description"></p>
+            <div id="modal-example"></div>
+            <div id="modal-links" class="social-icons"></div>
+        </div>
     </div>
-  </div>
-  <div id="divmain">
-    <div id="interna">
-      <img class="lara" src="imagens/LaraB0T.png">
-    </div>
-    <div id="pp">
-      <label for="switch">
-        <input type="checkbox" id="switch"> Light Mode
-      </label>
-      <p><h1 class="lraw"><strong>Lara BOT</strong></h1></p>
-      <p><h3>Sempre o melhor para os usuários!</h3></p>
-      <a href="https://discord.com/oauth2/authorize?client_id=739265612051906721&scope=bot&permissions=1879567614" class="myButton">Convidar</a> <a href="https://discord.com/invite/KzqSuaW" class="myButton">Suporte</a>
-    </div>
-    <div id="interna">
-      <a href="https://top.gg/bot/739265612051906721">
-        <img class="top" src="https://top.gg/api/widget/739265612051906721.svg">
-      </a>
-    </div>
-    <div id="interna">
-      <iframe class="dis" src="https://discord.com/widget?id=753225291735892040&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-    </div>
-  </div>
-  <script src="script.js"></script>
+
+    <!-- Link para o arquivo de JavaScript externo -->
+    <script src="script.js"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YPRF2VXF1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6YPRF2VXF1');
+    </script>
 </body>
 </html>

@@ -1,398 +1,434 @@
-html, body{
-  margin:0px;
-  padding: 0px;
-  cursor: url(imagens/cursor.cur), default;
-  color: var(--link-color);
-  transition: color 1s;
-}
-
-img, p, a{
-  transition: 1s;
-  max-width: 100%
-}
-img.top {
-  margin: 12px;
-  border-style: solid;
-  border-radius: 11px;
-  border-width: 0.3vw;
-  width: 15vw;
-  height: 8vw;
-}
-
+/* 1. Reset e Variáveis Globais (CSS) */
 :root {
-  --body-bg: #1f2225;
-  --body-color: #26292d;
-  --link-color: #ffffff;
+    /* Tema Escuro (Padrão) */
+    --bg-color: #1f2225;
+    --surface-color: #26292d;
+    --text-color: #ffffff;
+    --primary-color: #7289DA;
+    --gradient-text: linear-gradient(43deg, #4158D0 0%, #C850C0 45%, #FFCC70 75%, #C850C0 90%, #4158D0 100%);
+    --modal-example-bg: #1e1e1e;
 }
 
-a {
-  color: var(--link-color);
-  transition: color 1s;
+html.light-mode {
+    /* Tema Claro */
+    --bg-color: #f0f2f5;
+    --surface-color: #ffffff;
+    --text-color: #1c1e21;
+    --modal-example-bg: #e9ebee;
 }
 
-.dark-mode:root {
-  --body-bg: #C8C8C8;
-  --body-color: #BEBEBE;
-  --link-color: #000000;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-image: linear-gradient(to bottom, transparent -90%, var(--body-bg) 50%), url(imagens/bg.png);
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
-  background-color: var(--body-bg);
-  transition: background-color 1s;
-  font-family: sans-serif;
-  cursor: url(imagens/cursor.cur), default;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    background-image: linear-gradient(to bottom, transparent -90%, var(--bg-color) 50%), url(imagens/bg.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    cursor: default;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-a {
-  cursor: url(imagens/cursor.cur), default;
+/* 2. Estrutura e Layout Principal */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-#divnav {
-  width: auto;
-  height: 80px;
-  box-shadow: 0 0 30px black;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--body-color);
-  transition: background 1s;
+header, footer {
+    width: 100%;
+    background-color: var(--surface-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s;
 }
 
-#divnav hr.ic {
-  float: left;
-  width: 1px;
-  height: 60px;
-  background-color: var(--link-color);
-  transition: background 1s;
+header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
 }
 
-img.icon {
-  float: left;
-  width: 80px;
-  height: 80px;
-  position: relative;
-  animation: mymove2 2s infinite;
+main {
+    padding-bottom: 60px;
+    min-height: 100vh;
 }
 
-#divmain {
-  margin: auto;
-  width: 60%;
-  background-color: var(--body-color);
-  transition: background 1s;
-
-  box-shadow: black 0px 15px 25px, black 0px 5px 10px, black 0px 40px 20px -38px inset, rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+.page-section {
+    display: none;
+}
+.page-section.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-#interna {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align:  center;
-}
-
-img.lara {
-  width: 30vw;
-  height: 30vw;
-  max-width: 150px;
-  max-height: 150px;
-  padding-top: 5%;
-  display: block;
-}
-
-img.icone {
-  filter: saturate(0%);
-  transition: 1s;
-}
-
-@media only screen and (max-width: 768px) {
-
-  img.top {
-    width: 15vw;
-  }
-
-  iframe.dis {
-    width: 250px;
-    height: 500px;
-    padding-top: 10%;
-  }
-
-  #links a {
+/* 3. Componentes da UI */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
-    cursor: url(imagens/cursor.cur), default;
-    font-size: 100%;
-    color: var(--link-color);
-    transition: color 1s;
-  }
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
 
-  #links hr.bord {
-    background-color: #7289DA;
-    width: 120%;
-    height: 5px;
-    border: none;
+.logo img {
+    width: 50px;
+    height: 50px;
+    animation: float-animation 3s ease-in-out infinite;
+}
 
-  }
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 5px;
+}
 
-  div.divslink {
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after, .nav-links a.active-link::after {
+    width: 100%;
+}
+
+.button {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 28px;
     display: inline-block;
-    padding-left: 10%;
+    font-size: 17px;
+    padding: 14px 28px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    background-color: #5b6eae;
+    transform: translateY(-2px);
+}
+
+/* Seletor de Tema */
+.theme-switcher {
+    display: flex;
+    align-items: center;
+}
+.theme-switcher input {
+    display: none;
+}
+.theme-switcher .slider {
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    background-color: #3e444c;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+.theme-switcher .slider::before {
+    content: '';
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background-color: white;
+    top: 3px;
+    left: 4px;
+    transition: transform 0.3s;
+}
+.theme-switcher input:checked + .slider {
+    background-color: var(--primary-color);
+}
+.theme-switcher input:checked + .slider::before {
+    transform: translateX(24px);
+}
+
+/* 4. Seção Hero (Página Inicial) */
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero img.avatar {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    background-image: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: slidebg 20s linear infinite;
+}
+
+.hero p {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.widgets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+/* 5. Seção Sobre e Comandos */
+.card, .command-card {
+    background-color: var(--surface-color);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    cursor: pointer;
+}
+.card:hover, .command-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+.card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    margin-bottom: 15px;
+}
+.card h3, .command-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+.card p, .command-card p {
+    color: #ccc;
+}
+html.light-mode .card p, html.light-mode .command-card p {
+    color: #555;
+}
+.creator-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+.projects-grid, .commands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* 6. Páginas de Conteúdo (Termos, Política) */
+.content-page {
+    background-color: var(--surface-color);
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: left;
+    transition: background-color 0.3s;
+}
+.content-page h1, .content-page h2 {
+    color: var(--primary-color);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.content-page p, .content-page li {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+.content-page ul {
+    padding-left: 20px;
+}
+
+/* 7. Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+}
+.social-icons {
+    margin-bottom: 15px;
+}
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+.social-icons img {
+    width: 32px;
+    height: 32px;
+}
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* 8. Estilos do Modal (Pop-up) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+.modal-overlay.active {
+    display: flex;
+}
+.modal-content {
+    background-color: var(--surface-color);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    text-align: center;
+    animation: zoomIn 0.3s ease-in-out;
+    transition: background-color 0.3s;
+}
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2rem;
+    color: var(--text-color);
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+#modal-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    margin-bottom: 15px;
+}
+#modal-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+#modal-status {
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-  }
-
-  img.lara {
-    padding-top: 35%;
-  }
-
-  h1.pp {
-    padding-top: 30%;
-    display: block;
-  }
-
-  img.user {
-    width: 20vw;
-    height: 20vw;
-    max-width: 150px;
-    max-height: 150px;
-    padding-top: 5%;
-    padding-left: 5%;
-    display: flex;
-  }
-
-  div.ex {
-    padding-top: 30%;
-  }
-
-  img.ex {
-    width: 15%;
-    height: 15%;
-  }
-
-  img.icone {
-    width: 10vw;
-    height: 10vw;
-  }
-
-  img.sla {
-    height: 80%;
-    width: 80%;
-  }
-
+    gap: 8px;
 }
-@media only screen and (min-width: 768px) {
-
-  img.top {
-  width: 15vw;
-  }
-  
-  iframe.dis {
-    width: 350px;
-    height: 500px;
-    padding-top: 5%;
-  }
-
-  #links a {
-    text-decoration: none;
-    cursor: url(imagens/cursor.cur), default;
-    font-size: 150%;
-    padding-left: 8%;
-    color: var(--link-color);
-    transition: color 1s;
-  }
-
-  #links hr.bord {
-    background-color: #7289DA;
-    padding-left: auto;
-    width: 120%;
-    height: 5px;
-    border: none;
-
-  }
-
-  div.divslink {
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
     display: inline-block;
-    padding-left: 17%;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-
-  img.lara {
-    padding-top: 15%;
-  }
-
-  h2.user {
-    padding-left: 4%;
-  }
-
-  h1.pp {
+}
+#modal-description {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+#modal-example {
+    background-color: var(--modal-example-bg);
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    transition: background-color 0.3s;
+}
+#modal-example strong {
+    color: var(--primary-color);
     display: block;
-    padding-top: 15%;
-    font-size: 250%
-  }
-
-  img.user {
-    width: 40%;
-    height: 40%;
-    max-width: 150px;
-    max-height: 150px;
-    padding-top: 5%;
-    padding-left: 5%;
-    display: flex;
-  }
-
-  div.ex {
-    padding-top: 10%;
-  }
-
-  img.ex {
-    width: 10%;
-    height: 10%;
-  }
-
-  img.icone {
-    width: 6vw;
-    height: 6vw;
-  }
-
+    margin-bottom: 5px;
+}
+#modal-links a {
+    margin: 0 8px;
+}
+#modal-links img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s;
+}
+#modal-links a:hover img {
+    transform: scale(1.2);
 }
 
 
-#pp {
-  align-items: center;
-  justify-content: center;
-  text-align:  center;
+/* 9. Animações */
+@keyframes float-animation {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
-
-#pp h1 {
-  text-shadow: 3px 5px 2px black;
-}
-
-p.ex {
-  display: block;
-}
-
-#int {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align:  center;
-  margin-left: 20%;
-  margin-right: 20%;
-}
-
-.myButton {
-	background-color:#7289DA;
-	border-radius:28px;
-	display:inline-block;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	padding:16px 31px;
-	text-decoration:none;
-  transition: 0.5s;
-}
-.myButton:hover {
-	background-color:#ffffff;
-  color: #7289DA;
-  transition: 0.5s;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-}
-
-img.icone {
-  filter: saturate(0%);
-  transition: filter 1s; /* Adicione esta linha para a transição suave */
-}
-
-img.icone:hover {
-  animation-fill-mode: forwards;
-  filter: saturate(100%);
-}
-
-#git {
-  filter: invert(20%);
-}
-
-#git:hover {
-  filter: invert(0%);
-  animation-fill-mode: forwards;
-}
-
-img.sla {
-  padding-top: 5%;
-}
-
-footer.footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align:  center;
-  margin-left: 20%;
-  margin-right: 20%;
-  padding-top: 5%;
-}
-
-img.ex {
-  position: relative;
-  animation: mymove 5s infinite;
-}
-
-@keyframes mymove {
-  0%, 100%   {top: 0px;}
-  50%  {top: -20px;}
-}
-
-@keyframes mymove2 {
-  0%, 100%   {top: 0px;}
-  50%  {top: -5px;}
-}
-
-h1.pp {
-  background: -webkit-linear-gradient(43deg, #4158D0 0%, #C850C0 45%, #FFCC70 75%, #C850C0 90%, #4158D0 100%);
-  -webkit-text-fill-color: transparent;
-  font-size: 5vw;
-  animation: slidebg 10s linear infinite;
-}
-
-.lraw {
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 45%, #FFCC70 75%, #C850C0 90%, #4158D0 100%);
-  animation: slidebg 100s linear infinite;
-  color: white;
-}
-
-h2.ex {
-  background-image: linear-gradient(43deg, #ff6600 0%, #FFFF00 35%, #24ff00 45%, #4158D0 75%, #ff6600 100%);
-  animation: slidebg 100s linear infinite;
-  -webkit-text-fill-color: transparent;
-}
-
-h2.lr {
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 35%, #FFCC70 45%, #C850C0 75%, #4158D0 100%);
-  animation: slidebg 100s linear infinite;
-  -webkit-text-fill-color: transparent;
-}
-
-h2.fm {
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 35%, #FFCC70 45%, #C850C0 75%, #4158D0 100%);
-  animation: slidebg 100s linear infinite;
-  -webkit-text-fill-color: transparent;
-}
-
 @keyframes slidebg {
-  to {
-    background-position:300vw;
-  }
+    to { background-position: 300vw; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
-h1.pp, h2.fm, h2.lr, h2.ex {
-  background-clip: text;
-  -webkit-background-clip: text;
+/* 10. Responsividade */
+@media (max-width: 768px) {
+    header {
+        justify-content: center;
+        gap: 15px;
+    }
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
 }
